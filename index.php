@@ -51,7 +51,7 @@ include_once "./theme/header.php";
             <div class="row center-block">
                 <div class="col-md-4">
                      <h2>O co chodzi?</h2>
-                    <p>"E-Courses" to demo rozwijanej przeze mnie platformy z kursami online. Pierwszy projekt który stworzyłem od podstaw. Chodziło o naukę PHP, MySQL a przy okazji również podniesienie znajomości HTML5 oraz bootstrapa do szybkiego tworzenia front-endu, na portalu wykorzystałem najczęściej spotykane mechanizmy jak: logowanie, rejestracja, walidacja pól i przesyłanie danych formularzy na back-end. Jest to swego rodzaju portfolio, cały kod dostępny jest do ściągnięcia pod adresem: https://github.com/gskornowicz/ecourses</p>
+                    <p>"E-Courses" to demo rozwijanej przeze mnie platformy z kursami online. Pierwszy projekt który stworzyłem od podstaw. Chodziło o naukę PHP, MySQL a przy okazji również podniesienie znajomości HTML5 oraz bootstrapa do szybkiego tworzenia front-endu, na portalu wykorzystałem najczęściej spotykane mechanizmy jak: logowanie, rejestracja, walidacja pól i przesyłanie danych formularzy na back-end. Jest to swego rodzaju portfolio, cały kod dostępny jest do ściągnięcia pod adresem: <a href="https://github.com/gskornowicz/ecourses">https://github.com/gskornowicz/ecourses</a></p>
                     <p class="text-right">Autor: Grzegorz Skornowicz</p>
                     <a href="https://www.facebook.com/gskornowicz" target="_blank" style="margin-right:2px;" class="btn btn-social-icon btn-facebook pull-right">
                     <span class="fa fa-facebook "></span>
