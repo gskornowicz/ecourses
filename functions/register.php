@@ -4,7 +4,7 @@ require_once "../config.php";
 
 if(@isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
 {
-    header('Location: ./panelglowny.php');
+    header('Location: ./mainpanel.php');
     exit();
 }
 
@@ -19,13 +19,16 @@ $login = htmlentities($login, ENT_QUOTES, "UTF-8");
 
 // POST data check
 //// check login
-if(strlen($login)<3 OR strlen($login)>23)
+if(strlen($login)<3 || strlen($login)>23 || !ctype_alnum($login))
 {
     $_SESSION['bad_login'] = true;
 }
 
-//TODO:
-//// check email (if it has xxx@domain.pl)
+// check email with regular expression (if it has xxx@domain.pl)
+if(preg_match("/^[a-z0-9](\.?[a-z0-9_-]){0,}@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/", $email) === false)
+{
+    $_SESSION['bad_email'] = true;
+}
 
 ////check password for at least 8 characters strong (preferably in the future check for strong password)
 if(strlen($password)<8)
@@ -54,13 +57,14 @@ if(mysqli_num_rows($result = $db_connection->query(sprintf("SELECT * FROM users 
     $_SESSION['email_already_in_database'] = true;
 }
 
-if(isset($_SESSION['bad_password_retype']) or
-            isset($_SESSION['bad_login']) or
-            isset($_SESSION['bad_password']) or
-            isset($_SESSION['login_already_in_database']) or
+if(isset($_SESSION['bad_password_retype']) ||
+            isset($_SESSION['bad_login']) ||
+            isset($_SESSION['bad_email']) ||
+            isset($_SESSION['bad_password']) ||
+            isset($_SESSION['login_already_in_database']) ||
             isset($_SESSION['email_already_in_database']))
 {
-    header('Location: rejestracja.php');
+    header('Location: ../registration.php');
 }
 else
 {

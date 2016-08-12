@@ -5,7 +5,7 @@ require_once "../config.php";
 
 if(@isset($_SESSION['logged_in']) && @$_SESSION['logged_in'] == true)
 {
-    header('Location: ./panelglowny.php');
+    header('Location: ./mainpanel.php');
     exit();
 }
 
@@ -45,7 +45,7 @@ if(isset($_POST['login']) && isset($_POST['password']))
             if($result_password == $password && $_SESSION['login'] == $login)
             {
                 $_SESSION['logged_in'] = true;
-                header('Location: ../panelglowny.php');
+                header('Location: ../mainpanel.php');
             }
             else
             {

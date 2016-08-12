@@ -28,13 +28,13 @@
             </div>
             <ul class="nav navbar-nav">
               <li><a class="active" href="index.php">Logowanie</a></li>
-              <li><a href="rejestracja.php">Rejestracja</a></li>
-              <li><a href="panelglowny.php">Panel główny</a></li>
+              <li><a href="registration.php">Rejestracja</a></li>
+              <li><a href="mainpanel.php">Panel główny</a></li>
             </ul>
 
             <?php if(@isset($_SESSION['logged_in'])): ?>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="./functions/wyloguj.php">Wyloguj się</a></li>
+                <li><a href="./functions/logout.php">Wyloguj się</a></li>
             </ul>
             <?php endif; ?>
 
