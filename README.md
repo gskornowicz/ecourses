@@ -6,16 +6,15 @@ On site i used typical functions like loggin in, registration form, sending form
 
 Technologies i use and learn:
 ---------------------------
-*HTML 5
-*Bootstrap 3
-*PHP 7
-*MySQL
-*GIT
+* HTML 5
+* Bootstrap 3
+* PHP 7
+* MySQL
+* GIT
 
-Created using:
+Used software:
 ---------------------------
-*XAMPP Apache + MySQL + phpMyAdmin
-*Notepad++
-*Brackets
-*WinSCP
-*GitKraken
+* XAMPP Apache + MySQL + phpMyAdmin
+* Notepad++
+* Brackets + GIT extension
+* WinSCP
