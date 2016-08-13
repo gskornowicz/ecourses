@@ -17,32 +17,30 @@ if(isset($_POST['login']) && isset($_POST['password']))
 
     // Connecting, selecting database
     $db_connection = @new mysqli("$db_host", "$db_user", "$db_password","$db_name");
+
+    //main login function start
     if($db_connection->connect_errno!=0)
     {
         echo "DB con error: ".$db_connection->connect_errno;
     }
     else
     {
-        // main check login function
         $login = $_POST['login'];
         $password = $_POST['password'];
 
-        $login = htmlentities($login, ENT_QUOTES, "UTF-8");
-        $password = htmlentities($password, ENT_QUOTES, "UTF-8");
-
-        if($result = $db_connection->query(
-        sprintf("SELECT * FROM users WHERE login='%s' AND password='%s'",
-        mysqli_real_escape_string($db_connection,$login),
-        mysqli_real_escape_string($db_connection,$password))))
+        // if query returns more than 0 rows with submited password and login, allow login in + query sanitisation
+        if(mysqli_num_rows($result = $db_connection->query(
+        sprintf("SELECT * FROM users WHERE login='%s'",
+        mysqli_real_escape_string($db_connection,$login))))>0)
         {
             $row = $result->fetch_assoc();
             $_SESSION['id'] = $row['id'];
             $_SESSION['login'] = $row['login'];
             $_SESSION['email'] = $row['email'];
-            $result_password = $row['password'];
             $result->close();
 
-            if($result_password == $password && $_SESSION['login'] == $login)
+            //if provided password hash equals database hash: set logged in flag and goto main menu
+            if(password_verify($password, $row['password'] ))
             {
                 $_SESSION['logged_in'] = true;
                 header('Location: ../mainpanel.php');
@@ -53,12 +51,11 @@ if(isset($_POST['login']) && isset($_POST['password']))
                 header('Location: ../index.php');
             }
 
-
         }
         else
         {
-                $_SESSION['login_error'] = true;
-                header('Location: ../index.php');
+            $_SESSION['login_error'] = true;
+            header('Location: ../index.php');
         }
 
         $db_connection->close();
