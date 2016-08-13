@@ -3,6 +3,7 @@
 It's my first portfolio project, i'm trying to get my firs job as webmaster / back-end developer :)
 On site i used typical functions like loggin in, registration form, sending form data to back-end, forms validation in PHP and more to come :)
 
+p.s front-end of site is in polish language, but whole code is maintained in english.
 
 Technologies i use and learn:
 ---------------------------
