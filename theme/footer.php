@@ -1,3 +1,7 @@
+<footer class="panel panel-default">
+  <div class="panel-body"><p class="text-right">Created by Grzegorz Skornowicz 2016</p></div>
+</footer>
+
 <?php
     if($debug_mode == 1)
     {
