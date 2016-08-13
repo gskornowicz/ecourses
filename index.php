@@ -87,6 +87,7 @@ include_once "./theme/header.php";
     </div>
     <hr>
 </main>
+
 <?php
 // resetting flags
 unset($_SESSION['login_error']);

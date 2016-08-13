@@ -26,7 +26,7 @@ include_once "./theme/header.php";
             <h2>Wypełnij formularz:</h2>
             <form role="form" action="./functions/register.php" method="post">
 
-                <div class="form-group <?php if(@$_SESSION['login_already_in_database'] == true or @$_SESSION['bad_login'] == true): ?>has-error<?php endif; ?>">
+                <div class="form-group <?php if(@$_SESSION['login_already_in_database'] == true || @$_SESSION['bad_login'] == true): ?>has-error<?php endif; ?>">
                     <label>Login:</label>
                     <input type="text" class="form-control" name="login" required>
                     <?php if(@$_SESSION['login_already_in_database'] == true): ?>
@@ -61,7 +61,7 @@ include_once "./theme/header.php";
                     <input type="password" class="form-control" name="password" required>
                      <?php if(@$_SESSION['bad_password'] == true): ?>
                      <div class="alert alert-danger">
-                      <strong>Błąd!</strong> Hasło musi posiadać przynajmniej 8 znaków.
+                      <strong>Błąd!</strong> Hasło musi posiadać przynajmniej 6 i nie więcej niż 64 znaków.
                      </div>
                     <?php endif; ?>
                 </div>
