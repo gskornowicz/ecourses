@@ -9,9 +9,6 @@ if(@isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
 include_once "./theme/header.php";
 ?>
 
-
-
-
 <main>
 
     <div class="row center-block">
@@ -80,7 +77,12 @@ include_once "./theme/header.php";
                     <label><input type="checkbox" class="checkbox-inline" name="rules" required>akceptuję regulamin</label>
                 </div>
 
-                <div class="g-recaptcha" data-sitekey="6LeB1SYTAAAAAE8UZ7GU_YujTkJEUZ-bWogF46xI"></div>
+                <div class="g-recaptcha" data-sitekey="<?php echo $public_key; ?>"></div> <!-- sitekey need to be changed outside dev env -->
+                 <?php if(@$_SESSION['recaptcha_failed'] == true): ?>
+                     <div class="alert alert-danger">
+                      <strong>Błąd!</strong> Błąd captchy, spróbuj jeszcze raz :)
+                     </div>
+                    <?php endif; ?>
 
                 <input type="submit" value="Zarejestruj się" class="btn btn-primary">
             </form>
@@ -99,5 +101,6 @@ unset($_SESSION['bad_login']);
 unset($_SESSION['bad_email']);
 unset($_SESSION['bad_password']);
 unset($_SESSION['account_created']);
+unset($_SESSION['recaptcha_failed']);
 ?>
 <?php include_once "./theme/footer.php"; ?>
