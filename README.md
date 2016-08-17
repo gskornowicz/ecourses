@@ -28,3 +28,10 @@ Used software:
 * Notepad++
 * Brackets + GIT extension
 * WinSCP
+
+Demo site:
+---------------------------
+[ecourses.skornowicz.pl](ecourses.skornowicz.pl)
+
+i'm open for opinion and feedback
+cheers :)
