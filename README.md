@@ -9,9 +9,10 @@ Completed na planned features:
 ---------------------------
 |  Feature | Status |  Additional info  |
 |----------|--------|-------------------|
-|  login & registration | DONE |        |
+|  login & registration  | DONE     |   |
 |  signing up to courses |  PENDING |   |
-|  admin back-end |  PENDING |          |
+|  admin back-end        |  PENDING |   |
+| install script         | PENDING  |   |
 
 Technologies i use and learn:
 ---------------------------
