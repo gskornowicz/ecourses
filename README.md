@@ -5,6 +5,14 @@ On site i used typical functions like loggin in, registration form, sending form
 
 p.s front-end of site is in polish language, but whole code is maintained in english.
 
+Completed na planned features:
+---------------------------
+|  Feature | Status |  Additional info  |
+|----------|--------|-------------------|
+|  login & registration | DONE |        |
+|  signing up to courses |  PENDING |   |
+|  admin back-end |  PENDING |          |
+
 Technologies i use and learn:
 ---------------------------
 * HTML 5
