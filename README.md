@@ -31,7 +31,7 @@ Used software:
 
 Demo site:
 ---------------------------
-[ecourses.skornowicz.pl](ecourses.skornowicz.pl)
+[http://ecourses.skornowicz.pl/](http://ecourses.skornowicz.pl/)
 
 i'm open for opinion and feedback
 cheers :)
