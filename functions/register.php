@@ -65,7 +65,6 @@ try
     if($db_connection->connect_errno!=0)
     {
         throw new Exception("EXCEPTION: Error number: ".mysqli_connect_errno()." Error message: ".mysqli_connect_error());
-        exit("Database error, please report this to admin and try again later");
     }
     else
     {
@@ -86,6 +85,7 @@ try
 catch(Exception $error)
 {
     error_log($error->getMessage(), 0);
+    exit("Database error, please report this to admin and try again later");
 }
 
 
@@ -111,7 +111,7 @@ else
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         //database sanitised insert
-        if($db_connection->query(sprintf("INSERT INTO users (`id`, `login`, `password`, `email`) VALUES (NULL, '%s', '%s', '%s')",
+        if($db_connection->query(sprintf("INSERT INTO users (`id`, `loginn`, `password`, `email`) VALUES (NULL, '%s', '%s', '%s')",
                                     mysqli_real_escape_string($db_connection,$login),
                                     mysqli_real_escape_string($db_connection,$password),
                                     mysqli_real_escape_string($db_connection,$email))))
@@ -123,8 +123,7 @@ else
         else
         {
             // if not succeded, throw exception
-            throw new Exception("EXCEPTION: Error number: ".mysqli_connect_errno()." Error message: ".mysqli_connect_error());
-            echo "DB connection error see logs for error";
+            throw new Exception("EXCEPTION: Error number: ".mysqli_errno($db_connection)." Error message: ".mysqli_error($db_connection));
         }
 
 
