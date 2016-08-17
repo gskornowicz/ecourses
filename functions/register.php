@@ -14,7 +14,7 @@ $login = $_POST['login'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $retype_password = $_POST['retype_password'];
-$rules = $_POST['rules'];
+$rules = $_POST['rules'];                           // TODO: CHECK FOR RULES :))))
 
 //recaptcha 2.0
 // if enabled do:
@@ -100,6 +100,13 @@ if(isset($_SESSION['bad_password_retype']) ||
             isset($_SESSION['login_already_in_database']) ||
             isset($_SESSION['email_already_in_database']))
 {
+    //remember form data in global so user don't need type it again to correct :)
+     $_SESSION['register_login'] = $login;
+     $_SESSION['register_email'] = $email;
+     $_SESSION['register_password'] = $password;
+     $_SESSION['register_retype_password'] = $retype_password;
+     $_SESSION['register_rules'] = $rules;
+
     header('Location: ../registration.php');
 }
 else

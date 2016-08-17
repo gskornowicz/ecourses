@@ -25,7 +25,7 @@ include_once "./theme/header.php";
 
                 <div class="form-group <?php if(@$_SESSION['login_already_in_database'] == true || @$_SESSION['bad_login'] == true): ?>has-error<?php endif; ?>">
                     <label>Login:</label>
-                    <input type="text" class="form-control" name="login" required>
+                    <input type="text" class="form-control" name="login" value="<?php echo @$_SESSION['register_login']; ?>" required>
                     <?php if(@$_SESSION['login_already_in_database'] == true): ?>
                      <div class="alert alert-danger">
                       <strong>Błąd!</strong> Ten login jest zajęty, proszę wybierz inny.
@@ -40,7 +40,7 @@ include_once "./theme/header.php";
 
                 <div class="form-group <?php if(@$_SESSION['email_already_in_database'] == true || $_SESSION['bad_email'] == true   ): ?>has-error<?php endif; ?>" >
                     <label>Email:</label>
-                    <input type="email" class="form-control" name="email" required>
+                    <input type="email" class="form-control" name="email" value="<?php echo @$_SESSION['register_email']; ?>" required>
                      <?php if(@$_SESSION['email_already_in_database'] == true): ?>
                      <div class="alert alert-danger">
                       <strong>Błąd!</strong> Ten adres email jest już powiązany z kontem, proszę podaj inny adres.
@@ -55,7 +55,7 @@ include_once "./theme/header.php";
 
                 <div class="form-group <?php if(@$_SESSION['bad_password'] == true): ?>has-error<?php endif; ?>" >
                     <label>Hasło:</label>
-                    <input type="password" class="form-control" name="password" required>
+                    <input type="password" class="form-control" name="password" value="<?php echo @$_SESSION['register_password']; ?>" required>
                      <?php if(@$_SESSION['bad_password'] == true): ?>
                      <div class="alert alert-danger">
                       <strong>Błąd!</strong> Hasło musi posiadać przynajmniej 6 i nie więcej niż 64 znaków.
@@ -65,7 +65,7 @@ include_once "./theme/header.php";
 
                 <div class="form-group <?php if(@$_SESSION['bad_password_retype'] == true): ?>has-error<?php endif; ?>" >
                     <label>Powtórz Hasło:</label>
-                    <input type="password" class="form-control" name="retype_password" required>
+                    <input type="password" class="form-control" name="retype_password" value="<?php echo @$_SESSION['register_retype_password']; ?>" required>
                     <?php if(@$_SESSION['bad_password_retype'] == true): ?>
                      <div class="alert alert-danger">
                       <strong>Błąd!</strong> Źle przepisane hasło, spróbuj ponownie.
@@ -74,11 +74,11 @@ include_once "./theme/header.php";
                 </div>
 
                 <div class="checkbox">
-                    <label><input type="checkbox" class="checkbox-inline" name="rules" required>akceptuję regulamin</label>
+                    <label><input type="checkbox" class="checkbox-inline" name="rules" <?php if(@isset($_SESSION['register_rules'])) echo "checked"; ?> required>akceptuję regulamin</label>
                 </div>
 
                 <?php if($recaptcha_enabled == true): ?>
-                <div class="g-recaptcha" data-sitekey="<?php echo $public_key; ?>"></div> <!-- sitekey need to be changed outside dev env -->
+                <div class="g-recaptcha" data-sitekey="<?php echo $public_key; ?>"></div>
                  <?php if(@$_SESSION['recaptcha_failed'] == true): ?>
                      <div class="alert alert-danger">
                       <strong>Błąd!</strong> Błąd captchy, spróbuj jeszcze raz :)
