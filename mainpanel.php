@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once "config.php";
-    if(!isset($_SESSION['logged_in']))
+    if($_SESSION['logged_in'] == false)
     {
        header('Location: index.php'); // if not logged in
        exit();
