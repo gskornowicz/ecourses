@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "config.php";
-if($_SESSION['logged_in'] == true)
+if(@$_SESSION['logged_in'] == true)
 {
     header('Location: mainpanel.php');
     exit();
