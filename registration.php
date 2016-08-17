@@ -77,12 +77,14 @@ include_once "./theme/header.php";
                     <label><input type="checkbox" class="checkbox-inline" name="rules" required>akceptuję regulamin</label>
                 </div>
 
+                <?php if($recaptcha_enabled == true): ?>
                 <div class="g-recaptcha" data-sitekey="<?php echo $public_key; ?>"></div> <!-- sitekey need to be changed outside dev env -->
                  <?php if(@$_SESSION['recaptcha_failed'] == true): ?>
                      <div class="alert alert-danger">
                       <strong>Błąd!</strong> Błąd captchy, spróbuj jeszcze raz :)
                      </div>
-                    <?php endif; ?>
+                <?php endif; ?>
+                <?php endif; ?>
 
                 <input type="submit" value="Zarejestruj się" class="btn btn-primary">
             </form>
