@@ -22,7 +22,8 @@ Technologies i use and learn:
 ---------------------------
 * HTML 5
 * Bootstrap 3
-* PHP 7
+* PHP 7 + Symfony 3
+* Composer
 * MySQL
 * GIT
 
@@ -30,7 +31,7 @@ Used software:
 ---------------------------
 * XAMPP Apache + MySQL + phpMyAdmin
 * Notepad++
-* Brackets + GIT extension
+* Brackets
 * WinSCP
 
 Demo site:
