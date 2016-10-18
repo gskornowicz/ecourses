@@ -5,11 +5,15 @@ On site i used typical functions like loggin in, registration form, sending form
 
 p.s front-end of site is in polish language, but whole code is maintained in english.
 
+edit 18.10.2016
+---------------------------
+At the moment i'm rewriting code to symfony3 framework using best code practices.
+
 Completed na planned features:
 ---------------------------
 |  Feature | Status |  Additional info  |
-|----------|--------|-------------------|
-|  login & registration  | DONE     |   |
+|----------|--------|----------------------|
+|  login & registration  | refactoring     |   |
 |  signing up to courses |  PENDING |   |
 |  admin back-end        |  PENDING |   |
 | install script         | PENDING  |   |
